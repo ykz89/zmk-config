@@ -17,9 +17,5 @@ include:
     shield: skeletyl_left
   - board: nice_nano_v2
     shield: skeletyl_right
-#  - board: nice_nano_v2
-#    shield: dilemma_left
-#  - board: nice_nano_v2
-#    shield: dilemma_right
-#  - board: nice_nano_v2
-#    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: skeletyl_dongle

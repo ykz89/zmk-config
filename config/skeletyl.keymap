@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define DVORAK 0
+#define COLEMAK 0
 #define LOWER 1
 #define UPPER 2
 #define EXTEND 3
@@ -109,7 +109,7 @@
       timeout-ms = <50>;
       key-positions = <0 9>;
       bindings = <&cancel>;
-      layers = <DVORAK>;
+      layers = <COLEMAK>;
     };
 
     // Caps Word on a 2-key combo.
@@ -117,7 +117,7 @@
       timeout-ms = <50>;
       key-positions = <2 7>;
       bindings = <&caps_word>;
-      layers = <DVORAK>;
+      layers = <COLEMAK>;
     };
   };
 
@@ -156,7 +156,7 @@
   };
 
   /**
-   * 36-key keymap, using a Dvorak base layer.
+   * 36-key keymap, using a Colemak base layer.
    *
    *   - Enter, tab and backspace on all right-hand non-base layers.
    *   - Shift, Control and Gui sticky mods on hold-tap with layers on thumb keys.
@@ -175,13 +175,13 @@
   keymap {
     compatible = "zmk,keymap";
 
-    /** Traditional Dvorak layout. */
-    dvorak {
+    /** Traditional Colemak layout. */
+    colemak {
       bindings = <
   /* ╭──────────────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ */
-       &sqt_hash    &comma_qmark &dot_excl    &kp P        &kp Y            &kp F        &kp G        &kp C        &kp R        &kp L
-       &kp A        &kp O        &kp E        &kp U        &kp I            &kp D        &kp H        &kp T        &kp N        &kp S
-       &kp LSHIFT   &kp Q        &kp J        &kp K        &kp X            &kp B        &kp M        &kp W        &kp V        &kp Z
+       &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J        &kp L        &kp U        &kp Y        &kp SQT
+       &kp A        &kp R        &kp S        &kp T        &kp G            &kp M        &kp N        &kp E        &kp I        &kp O
+       &kp Z        &kp X        &kp C        &kp D        &kp V            &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
   /* ╰──────────────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────────────────╯ */
                                  &mo LOWER    &kp SPACE    &kp LGUI         &kp RCTRL    &sk LSHIFT   &mo UPPER
   /*                           ╰────────────────────────────────────────╯ ╰────────────────────────────────────────╯                           */
