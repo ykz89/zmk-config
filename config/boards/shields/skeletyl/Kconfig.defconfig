@@ -17,10 +17,7 @@ endif
 if SHIELD_SKELETYL_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "Skeletyl"
-
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
+	default "Skeletyl Left"
 
 endif
 
@@ -35,5 +32,8 @@ if SHIELD_SKELETYL_LEFT || SHIELD_SKELETYL_RIGHT || SHIELD_SKELETYL_DONGLE
 
 config ZMK_SPLIT
 	default y
+
+config ZMK_BLE
+    default y
 	
 endif
