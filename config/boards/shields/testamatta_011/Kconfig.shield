@@ -1,0 +1,5 @@
+# Copyright (c) 2020 ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_TESTAMATTA_011
+    def_bool $(shields_list_contains,testamatta_011)

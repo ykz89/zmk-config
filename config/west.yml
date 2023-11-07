@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: round-robin
+      url-base: https://github.com/ykz89
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: round-robin
+      revision: kscan/round_robin
       import: app/west.yml
   self:
     path: config

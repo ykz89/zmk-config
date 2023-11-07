@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define BASE 0
+#define LOWER 1
+#define RAISE 2
+#define EXTEND 3
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+
+&lt {
+    quick_tap_ms = <200>;
+};
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <LOWER RAISE>;
+            then-layer = <EXTEND>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        /* Default layer from 011:
+            [0] = LAYOUT(
+                 ,-------------------------------------------------------------------------------------------------.
+                | Esc  |   Q  |   W  |   F  |   P  |   B  |      |      |   J  |   L  |   U  |   Y  |   '  | Bksp |
+                |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
+                | Tab  |   A  |   R  |   S  |   T  |   G  |      |      |   M  |   N  |   E  |   I  |   O  |  ;   |
+                |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
+                | Shift|   Z  |   X  |   C  |   D  |   V  |      |      |   K  |   H  |   ,  |   .  |   /  | Enter|
+                |------+------+------+------+------+------+------+------+------+------+------+------|-------------|
+                |      |  GUI | Alt  | Ctrl | Shift| Space| Tab/1| Ent  |Bksp/2| Left | Down |  Up  | Right|      |
+                `-------------------------------------------------------------------------------------------------'
+            ),
+        */
+
+        default {
+            bindings = <
+&kp ESC     &kp Q     &kp W             &kp F           &kp P      &kp B      &kp J      &kp L       &kp U      &kp Y     &kp SQT    &kp BSPC
+&kp TAB     &kp A     &kp R             &kp S           &kp T      &kp G      &kp M      &kp N       &kp E      &kp I     &kp O      &kp SEMI
+&kp LSHIFT  &kp Z     &kp X             &kp C           &kp V      &kp B      &kp N      &kp M       &kp COMMA  &kp DOT   &kp SLASH             &kp ENTER
+&kp LGUI    &kp LALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp SPACE  &lt 1 TAB  &kp ENTER  &lt 2 BSPC  &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT
+            >;
+        };
+
+        /* Layer 1 from 011:
+            [1] = LAYOUT(
+                //,-----------------------------------------------------------------------------------------------------------.
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, KC_EQL,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+                //|-----------------------------------------------------------------------------------------------------------'
+        */
+
+        lower_layer {
+            label = "LOWER";
+            bindings = <
+&trans  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET     &trans  &trans  &trans    &trans     &trans     &trans
+&trans  &kp SEMICOLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL             &kp N6  &kp N7  &kp N8    &kp N9     &kp N0     &kp MINUS
+&trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NON_US_BACKSLASH  &trans  &trans  &trans    &trans     &kp LBRC              &kp RBRC
+&trans  &trans            &trans        &trans        &trans        &trans                &trans  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+            >;
+        };
+
+        /* Layer 2 from 011:
+            [2] = LAYOUT(
+                //,-----------------------------------------------------------------------------------------------------------.
+                    _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                //|-----------------------------------------------------------------------------------------------------------'
+            ),
+        */
+
+        raise_layer {
+            label = "RAISE";
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+            >;
+        };
+
+        /* Layer 3 from 011:
+            [3] = LAYOUT(
+                //,-----------------------------------------------------------------------------------------------------------.
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, KC_SLEP, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                //|-----------------------------------------------------------------------------------------------------------'
+            )
+        */
+
+        extend_layer {
+            label = "EXTEND";
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+            >;
+        };
+    };
+};

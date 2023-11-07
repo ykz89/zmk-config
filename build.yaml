@@ -1,11 +1,13 @@
 include:
-  - board: nice_nano_v2
-    shield: skeletyl_left
-  - board: nice_nano_v2
-    shield: skeletyl_right
+#  - board: nice_nano_v2
+#    shield: skeletyl_left
+#  - board: nice_nano_v2
+#    shield: skeletyl_right
+#  - board: seeeduino_xiao_ble
+#    shield: skeletyl_dongle
+#  - board: seeeduino_xiao_ble
+#    shield: settings_reset
+#  - board: nice_nano_v2
+#    shield: settings_reset
   - board: seeeduino_xiao_ble
-    shield: skeletyl_dongle
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
-  - board: nice_nano_v2
-    shield: settings_reset
+    shield: testamatta_011

@@ -22,7 +22,6 @@
 #define RCS_TAB (LC(LS(TAB)))
 
 #define EXTPOW_TOG &ext_power EXT_POWER_TOGGLE_CMD
-#define RGB_UG_TOG &rgb_ug RGB_TOG
 
 // Adjust sticky-keys configuration.
 &sk {
@@ -155,23 +154,6 @@
     };
   };
 
-  /**
-   * 36-key keymap, using a Colemak base layer.
-   *
-   *   - Enter, tab and backspace on all right-hand non-base layers.
-   *   - Shift, Control and Gui sticky mods on hold-tap with layers on thumb keys.
-   *   - Navigation layer:
-   *     - Direct access desktop shortcuts.
-   *     - Home-row sticky mods.
-   *     - Convenience shortcuts (cut/copy/paste, ctrl+tab, ctrl+shift+tab)
-   *     - Inverted T arrow cluster.
-   *   - Lower/RAISE/extend tri-layer:
-   *     - 2 symbols layers to reduce pinky usage, and favor symbol synergies in most frequently used languages.
-   *     - Numbers tri-layer with left-side numpad.
-   *   - System layer for hardware controls:
-   *     - Bluetooth channels.
-   *     - Reset/bootloader.
-   */
   keymap {
     compatible = "zmk,keymap";
 
@@ -183,72 +165,35 @@
        &kp A        &kp R        &kp S        &kp T        &kp G            &kp M        &kp N        &kp E        &kp I        &kp O
        &kp Z        &kp X        &kp C        &kp D        &kp V            &kp K        &kp H        &kp COMMA    &kp DOT      &kp FSLH
   /* ╰──────────────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────────────────╯ */
-                                 &kp ESC   &lt LOWER SPACE &kp TAB       &kp ENTER    &lt RAISE BSPC  &key_repeat
+                                 &kp ESC      &kp SPACE    &lt LOWER TAB    &kp ENTER    &lt RAISE BSPC  &kp DEL
   /*                           ╰────────────────────────────────────────╯ ╰────────────────────────────────────────╯                           */
       >;
     };
 
-    /**
-     * Lower layer. Left thumb down.
-     *
-     * Navigation and symbols.
-     *
-     *   - Primary hand (left):
-     *     - Home-row sticky mods.
-     *     - Direct access desktop shortcuts.
-     *   - Secondary hand (right):
-     *     - Inverted T arrow cluster.
-     *     - Parenthesis brackets.
-     *     - Semi-colon for synergy with parenthesis and alt mod.
-     */
     lower {
       bindings = <
   /* ╭──────────────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ */
-       &kp C_PREV   &kp C_VOL_DN &kp C_PP     &kp C_VOL_UP &kp C_NEXT       &none        &kp HOME     &kp UP       &kp END      &none
-       &sk LGUI     &sk LALT     &sk LCTRL    &sk LSHIFT   &kp LAUNCHER     &none        &kp LEFT     &kp DOWN     &kp RIGHT    &none
-       &none        &none        &kp C_MUTE   &none        &none            &none        &kp LPAR     &kp SEMI     &kp RPAR     &none
+       &kp LBKT     &kp N7       &kp N8       &kp N9       &kp RBKT         &kp PG_UP       &kp HOME     &kp UP       &kp END      &kp PSCRN
+       &kp SEMI     &kp N4       &kp N5       &kp N6       &kp EQUAL        &kp CAPS        &kp LEFT     &kp DOWN     &kp RIGHT    &kp EQUAL
+       &kp GRAVE    &kp N1       &kp N2       &kp N3       &kp NUBS         &kp PG_DN       &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI
   /* ╰──────────────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────────────────╯ */
-                                 &trans       &trans       &trans           &trans       &trans       &trans
+                                 &kp DOT       &kp N0       &kp MINUS        &none          &trans       &trans
   /*                           ╰────────────────────────────────────────╯ ╰────────────────────────────────────────╯                           */
       >;
     };
 
-    /**
-     * Raise layer. Right thumb down.
-     *
-     * Symbols.
-     *
-     *   - Primary hand (right):
-     *     - Underscore for symmetry with dash on other half.
-     *     - Caret and dollar for Vi-motions.
-     *     - Square and curly brackets.
-     *     - Double quotes for modal editors registry.
-     *   - Secondary hand (left):
-     *     - Most common operators.
-     *     - Hash and exclamation mark for Gmail shortcuts, and with synergy with right-side curly brackets.
-     *     - Tilde and forward-slash synergy for paths. 
-     *     - Modal editors escape+colon roll for command mode.
-     */
     raise {
       bindings = <
   /* ╭──────────────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ */
-       &kp LBKT    &kp AMPS     &kp ASTRK     &kp LPAR    &kp RBKT            &none        &none        &kp RA(N5)   &none        &none
-       &kp COLON   &kp DLLR     &kp PRCNT     &kp CARET   &kp PLUS            &none        &sk LSHIFT   &sk LCTRL    &sk LALT     &sk LGUI
-       &kp TILDE   &kp EXCL     &kp AT        &kp POUND   &kp PIPE            &kp GRAVE    &kp DOT      &kp UNDER    &kp MINUS    &none
+        &none        &kp F7       &kp F8       &kp F9       &kp F12           &kp LBKT      &kp N7       &kp N8       &kp N9       &kp RBKT
+        &sk ESC      &kp F4       &sk F5       &kp F6       &kp F11           &kp N4        &kp N5       &kp N6       &kp EQUAL    &kp EQUAL
+        &sk LGUI     &kp F1       &kp F2       &kp F3       &kp F10           &kp GRAVE     &kp N1       &kp N2       &kp N3       &kp NUBS
   /* ╰──────────────────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────────────────╯ */
-                                 &trans       &trans       &trans             &trans       &trans       &trans
+                                 &trans        &none         &trans            &trans       &trans       &trans
   /*                           ╰────────────────────────────────────────╯ ╰────────────────────────────────────────╯                           */
       >;
     };
 
-    /**
-     * Extend layer. Classic tri-layer activated from both lower and raise layers.
-     *
-     * Numbers and symbols.
-     *
-     * - Left-side numpad, with right-side 0.
-     * - Right-side symbols, angle brackets.
-     */
     extend {
       bindings = <
   /* ╭──────────────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ */
@@ -261,12 +206,6 @@
       >;
     };
 
-   /**
-    * System layer for hardware controls. Available as a sticky-layer with a hard-to-mistap thumb hold.
-    *
-    *   - Bluetooth channels.
-    *   - Reset/bootloader.
-    */
     system {
       bindings = <
   /* ╭──────────────────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────────────────╮ */
