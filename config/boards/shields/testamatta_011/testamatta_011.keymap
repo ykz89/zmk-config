@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
@@ -23,8 +24,30 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <EXTEND>;
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        QW_ESC {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        CAPS_WORD {
+            bindings = <&caps_word>;
+            key-positions = <28 31>;
+            layers = <0>;
+        };
+
+        THUMB_DOT {
+            bindings = <&kp PERIOD>;
+            key-positions = <41 40>;
+            layers = <1>;
         };
     };
 
@@ -47,81 +70,40 @@
 
         default {
             bindings = <
-&kp ESC     &kp Q     &kp W             &kp F           &kp P      &kp B      &kp J      &kp L       &kp U      &kp Y     &kp SQT    &kp BSPC
-&kp TAB     &kp A     &kp R             &kp S           &kp T      &kp G      &kp M      &kp N       &kp E      &kp I     &kp O      &kp SEMI
-&kp LSHIFT  &kp Z     &kp X             &kp C           &kp V      &kp B      &kp N      &kp M       &kp COMMA  &kp DOT   &kp SLASH             &kp ENTER
-&kp LGUI    &kp LALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp SPACE  &lt 1 TAB  &kp ENTER  &lt 2 BSPC  &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT
+&kp ESC     &kp Q       &kp W       &kp F        &kp P         &kp B      &kp J      &kp L         &kp U            &kp Y            &kp SQT         &kp BSPC
+&kp TAB     &kp A       &kp R       &kp S        &kp T         &kp G      &kp M      &kp N         &kp E            &kp I            &kp O           &kp SEMI
+&kp LSHIFT  &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT D  &kp V      &kp K      &mt RSHIFT H  &mt RCTRL COMMA  &mt RALT PERIOD  &mt RGUI SLASH             &kp ENTER
+&kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT   &kp SPACE     &lt 2 TAB  &kp ENTER  &lt 1 BSPC    &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT
             >;
         };
-
-        /* Layer 1 from 011:
-            [1] = LAYOUT(
-                //,-----------------------------------------------------------------------------------------------------------.
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS, KC_EQL,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LBRC, KC_RBRC, KC_BSLS,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
-                //|-----------------------------------------------------------------------------------------------------------'
-        */
 
         lower_layer {
             label = "LOWER";
             bindings = <
-&trans  &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET     &trans  &trans  &trans    &trans     &trans     &trans
-&trans  &kp SEMICOLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL             &kp N6  &kp N7  &kp N8    &kp N9     &kp N0     &kp MINUS
-&trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NON_US_BACKSLASH  &trans  &trans  &trans    &trans     &kp LBRC              &kp RBRC
-&trans  &trans            &trans        &trans        &trans        &trans                &trans  &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
+&trans  &kp LEFT_BRACKET  &kp N7             &kp N8              &kp N9               &kp RIGHT_BRACKET     &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
+&trans  &kp SEMICOLON     &kp NUMBER_4       &kp N5              &kp NUMBER_6         &kp EQUAL             &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp N0                &trans
+&trans  &mt LGUI GRAVE    &mt LALT NUMBER_1  &mt LCTRL NUMBER_2  &mt LSHIFT NUMBER_3  &kp NON_US_BACKSLASH  &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI                      &trans
+&trans  &trans            &trans             &trans              &kp MINUS            &lt 2 N0              &trans     &none       &trans     &trans     &trans                &trans
             >;
         };
-
-        /* Layer 2 from 011:
-            [2] = LAYOUT(
-                //,-----------------------------------------------------------------------------------------------------------.
-                    _______, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-                //|-----------------------------------------------------------------------------------------------------------'
-            ),
-        */
 
         raise_layer {
             label = "RAISE";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &none       &kp F7       &kp F8        &kp F9         &kp F12  &kp LC(LS(Z))  &kp LC(V)               &kp LC(C)       &kp LC(X)             &kp LC(Z)             &trans
+&trans  &kp ESCAPE  &kp F4       &kp F5        &kp F6         &kp F11  &kp LG(SPACE)  &none                   &none           &none                 &none                 &trans
+&trans  &kp LGUI    &mt LALT F1  &mt LCTRL F2  &mt LSHIFT F3  &kp F10  &trans         &mt RIGHT_SHIFT C_PREV  &mt RCTRL C_PP  &mt RIGHT_ALT C_NEXT  &mt RIGHT_GUI C_MUTE          &trans
+&trans  &trans      &trans       &trans        &trans         &none    &trans         &trans                  &trans          &trans                &trans                &trans
             >;
         };
-
-        /* Layer 3 from 011:
-            [3] = LAYOUT(
-                //,-----------------------------------------------------------------------------------------------------------.
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, KC_SLEP, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                //|--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-                    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-                //|-----------------------------------------------------------------------------------------------------------'
-            )
-        */
 
         extend_layer {
             label = "EXTEND";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans
+&trans  &none         &none         &none         &none         &bt BT_CLR    &bt BT_CLR    &none         &none         &none         &none         &trans
+&trans  &none         &bt BT_PRV    &sys_reset    &bt BT_NXT    &bootloader   &bootloader   &bt BT_NXT    &sys_reset    &bt BT_PRV    &none         &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
             >;
         };
     };
