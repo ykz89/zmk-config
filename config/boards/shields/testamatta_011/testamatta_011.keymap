@@ -13,8 +13,6 @@
 #define RAISE 2
 #define EXTEND 3
 
-// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-
 &lt {
     quick_tap_ms = <200>;
 };
@@ -92,10 +90,10 @@
         lower_layer {
             label = "LOWER";
             bindings = <
-&trans  &kp LEFT_BRACKET  &kp N7             &kp N8              &kp N9               &kp RIGHT_BRACKET     &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
-&trans  &kp SEMICOLON     &kp NUMBER_4       &kp N5              &kp NUMBER_6         &kp EQUAL             &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp N0                &trans
-&trans  &mt LGUI GRAVE    &mt LALT NUMBER_1  &mt LCTRL NUMBER_2  &mt LSHIFT NUMBER_3  &kp NON_US_BACKSLASH  &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI              &trans
-&trans  &trans            &trans             &trans              &kp MINUS            &lt 2 N0              &trans     &none       &trans     &trans     &trans                &trans
+&trans  &kp LBKT          &kp N7             &kp N8              &kp N9               &kp RBKT              &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
+&trans  &kp SEMI          &kp N4             &kp N5              &kp N6               &kp EQUAL             &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp INS               &trans
+&trans  &mt LGUI GRAVE    &mt LALT N1        &mt LCTRL N2        &mt LSHIFT N3        &kp NUBS              &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI              &trans
+&trans  &trans            &trans             &trans              &kp MINUS            &lt 2 N0              &trans     &trans      &trans     &trans     &trans                &trans
             >;
         };
 
