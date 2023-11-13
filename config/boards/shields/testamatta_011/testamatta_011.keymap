@@ -49,6 +49,18 @@
             key-positions = <41 40>;
             layers = <1>;
         };
+
+        LEFTSHIFT {
+            bindings = <&kp LSHIFT>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        RIGHTSHIFT {
+            bindings = <&kp RSHIFT>;
+            key-positions = <21 20>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -63,17 +75,17 @@
                 |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
                 | Shift|   Z  |   X  |   C  |   D  |   V  |      |      |   K  |   H  |   ,  |   .  |   /  | Enter|
                 |------+------+------+------+------+------+------+------+------+------+------+------|-------------|
-                |      |  GUI | Alt  | Ctrl | Shift| Space| Tab/1| Ent  |Bksp/2| Left | Down |  Up  | Right|      |
+                |      |  GUI | Alt  | Ctrl | Shift| Space| Tab/2| Ent  |Bksp/1| Left | Down |  Up  | Right|      |
                 `-------------------------------------------------------------------------------------------------'
             ),
         */
 
         default {
             bindings = <
-&kp ESC     &kp Q       &kp W       &kp F        &kp P         &kp B      &kp J      &kp L         &kp U            &kp Y            &kp SQT         &kp BSPC
-&kp TAB     &kp A       &kp R       &kp S        &kp T         &kp G      &kp M      &kp N         &kp E            &kp I            &kp O           &kp SEMI
-&kp LSHIFT  &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT D  &kp V      &kp K      &mt RSHIFT H  &mt RCTRL COMMA  &mt RALT PERIOD  &mt RGUI SLASH             &kp ENTER
-&kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT   &kp SPACE     &lt 2 TAB  &kp ENTER  &lt 1 BSPC    &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT
+&kp ESC     &kp Q       &kp W       &kp F        &kp P         &kp B        &kp J      &kp L         &kp U            &kp Y            &kp SQT         &kp BSPC
+&kp TAB     &kp A       &kp R       &kp S        &kp T         &kp G        &kp M      &kp N         &kp E            &kp I            &kp O           &kp SEMI
+&kp LSHIFT  &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT D  &mt LCTRL V  &kp K      &mt RSHIFT H  &mt RCTRL COMMA  &mt RALT PERIOD  &mt RGUI SLASH  &kp ENTER
+&kp LGUI    &kp LALT    &kp LCTRL   &kp LSHIFT   &kp SPACE     &lt 2 TAB    &kp ENTER  &lt 1 BSPC    &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT
             >;
         };
 
@@ -82,7 +94,7 @@
             bindings = <
 &trans  &kp LEFT_BRACKET  &kp N7             &kp N8              &kp N9               &kp RIGHT_BRACKET     &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
 &trans  &kp SEMICOLON     &kp NUMBER_4       &kp N5              &kp NUMBER_6         &kp EQUAL             &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp N0                &trans
-&trans  &mt LGUI GRAVE    &mt LALT NUMBER_1  &mt LCTRL NUMBER_2  &mt LSHIFT NUMBER_3  &kp NON_US_BACKSLASH  &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI                      &trans
+&trans  &mt LGUI GRAVE    &mt LALT NUMBER_1  &mt LCTRL NUMBER_2  &mt LSHIFT NUMBER_3  &kp NON_US_BACKSLASH  &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI              &trans
 &trans  &trans            &trans             &trans              &kp MINUS            &lt 2 N0              &trans     &none       &trans     &trans     &trans                &trans
             >;
         };
@@ -90,10 +102,10 @@
         raise_layer {
             label = "RAISE";
             bindings = <
-&trans  &none       &kp F7       &kp F8        &kp F9         &kp F12  &kp LC(LS(Z))  &kp LC(V)               &kp LC(C)       &kp LC(X)             &kp LC(Z)             &trans
-&trans  &kp ESCAPE  &kp F4       &kp F5        &kp F6         &kp F11  &kp LG(SPACE)  &none                   &none           &none                 &none                 &trans
-&trans  &kp LGUI    &mt LALT F1  &mt LCTRL F2  &mt LSHIFT F3  &kp F10  &trans         &mt RIGHT_SHIFT C_PREV  &mt RCTRL C_PP  &mt RIGHT_ALT C_NEXT  &mt RIGHT_GUI C_MUTE          &trans
-&trans  &trans      &trans       &trans        &trans         &none    &trans         &trans                  &trans          &trans                &trans                &trans
+&trans      &kp C_PREV       &kp C_PP        &kp C_NEXT         &kp C_MUTE        &none          &none  &kp F7          &kp F8        &kp F9         &kp F12            &trans
+&trans      &none            &none           &none              &none             &kp LC(SPACE)  &none  &kp F4          &kp F5        &kp F6         &kp F11            &trans
+&trans      &mt LGUI LC(V)   &mt LALT LC(C)  &mt LCTRL LC(X)    &mt LSHIFT LC(Z)  &kp LC(LS(Z))  &none  &mt RSHIFT F1   &mt RCTRL F2  &mt RALT F3    &mt RGUI F12       &trans
+&trans      &trans           &trans          &trans             &trans            &trans         &trans &trans          &trans        &trans         &trans             &trans
             >;
         };
 
