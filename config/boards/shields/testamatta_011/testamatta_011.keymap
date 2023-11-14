@@ -90,20 +90,20 @@
         lower_layer {
             label = "LOWER";
             bindings = <
-&trans  &kp LBKT          &kp N7             &kp N8              &kp N9               &kp RBKT              &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
-&trans  &kp SEMI          &kp N4             &kp N5              &kp N6               &kp EQUAL             &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp INS               &trans
-&trans  &mt LGUI GRAVE    &mt LALT N1        &mt LCTRL N2        &mt LSHIFT N3        &kp NUBS              &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI              &trans
-&trans  &trans            &trans             &trans              &kp MINUS            &lt 2 N0              &trans     &trans      &trans     &trans     &trans                &trans
+&trans  &kp LBKT        &kp N7       &kp N8        &kp N9         &kp RBKT   &kp PG_DN  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))  &trans
+&trans  &kp SEMI        &kp N4       &kp N5        &kp N6         &kp EQUAL  &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp INS               &trans
+&trans  &mt LGUI GRAVE  &mt LALT N1  &mt LCTRL N2  &mt LSHIFT N3  &kp NUBS   &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI              &trans
+&trans  &trans          &trans       &trans        &kp MINUS      &lt 2 N0   &trans     &trans      &trans     &trans     &trans                &trans
             >;
         };
 
         raise_layer {
             label = "RAISE";
             bindings = <
-&trans      &kp C_PREV       &kp C_PP        &kp C_NEXT         &kp C_MUTE        &none          &none  &kp F7          &kp F8        &kp F9         &kp F12            &trans
-&trans      &none            &none           &none              &none             &kp LC(SPACE)  &none  &kp F4          &kp F5        &kp F6         &kp F11            &trans
-&trans      &mt LGUI LC(V)   &mt LALT LC(C)  &mt LCTRL LC(X)    &mt LSHIFT LC(Z)  &kp LC(LS(Z))  &none  &mt RSHIFT F1   &mt RCTRL F2  &mt RALT F3    &mt RGUI F12       &trans
-&trans      &trans           &trans          &trans             &trans            &trans         &trans &trans          &trans        &trans         &trans             &trans
+&trans  &kp C_PREV          &kp C_PP        &kp C_NEXT       &kp C_MUTE        &none          &none   &kp F7         &kp F8        &kp F9       &kp F12       &trans
+&trans  &none               &none           &none            &none             &kp LC(SPACE)  &none   &kp F4         &kp F5        &kp F6       &kp F11       &trans
+&trans  &mt LGUI LC(LS(Z))  &mt LALT LC(V)  &mt LCTRL LS(C)  &mt LSHIFT LC(X)  &kp LC(Z)      &none   &mt RSHIFT F1  &mt RCTRL F2  &mt RALT F3  &mt RGUI F12  &trans
+&trans  &trans              &trans          &trans           &trans            &trans         &trans  &trans         &trans        &trans       &trans        &trans
             >;
         };
 
