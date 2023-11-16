@@ -79,7 +79,7 @@
             bindings = <
   &kp LBKT        &kp N7       &kp N8        &kp N9         &kp RBKT     &kp PG_UP  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))
   &kp SEMI        &kp N4       &kp N5        &kp N6         &kp EQUAL    &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp INS
-  &mt LGUI GRAVE  &mt LALT N1  &mt LCTRL N2  &mt LSHIFT N3  &kp NUBS     &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI
+  &mt LGUI GRAVE  &mt LALT N1  &mt LCTRL N2  &mt LSHIFT N3  &kp BSLH     &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI
                                &kp DOT       &kp MINUS      &lt 2 N0     &trans     &trans      &trans
             >;
         };
