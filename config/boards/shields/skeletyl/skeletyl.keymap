@@ -61,6 +61,18 @@
         };
     };
 
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,7 +82,7 @@
             bindings = <
   &kp Q       &kp W       &kp F        &kp P         &kp B          &kp J      &kp L         &kp U            &kp Y            &kp SQT
   &kp A       &kp R       &kp S        &kp T         &kp G          &kp M      &kp N         &kp E            &kp I            &kp O
-  &mt LGUI Z  &mt LALT X  &mt LCTRL C  &mt LSHIFT D  &mt LCTRL V    &kp K      &mt RSHIFT H  &mt RCTRL COMMA  &mt RALT PERIOD  &mt RGUI FSLH
+  &bhm LGUI Z  &bhm LALT X  &bhm LCTRL C  &bhm LSHIFT D  &bhm LCTRL V    &kp K      &bhm RSHIFT H  &bhm RCTRL COMMA  &bhm RALT PERIOD  &bhm RGUI FSLH
                           &kp ESC      &kp SPACE     &lt 2 TAB      &kp ENTER  &lt 1 BSPC    &kp DEL
             >;
         };
@@ -79,7 +91,7 @@
             bindings = <
   &kp LBKT        &kp N7       &kp N8        &kp N9         &kp RBKT     &kp PG_UP  &kp HOME    &kp UP     &kp END    &kp LS(LG(NUMBER_3))
   &kp SEMI        &kp N4       &kp N5        &kp N6         &kp EQUAL    &kp CAPS   &kp LEFT    &kp DOWN   &kp RIGHT  &kp INS
-  &mt LGUI GRAVE  &mt LALT N1  &mt LCTRL N2  &mt LSHIFT N3  &kp BSLH     &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI
+  &bhm LGUI GRAVE  &bhm LALT N1  &bhm LCTRL N2  &bhm LSHIFT N3  &kp BSLH     &kp PG_DN  &kp RSHIFT  &kp RCTRL  &kp RALT   &kp RGUI
                                &kp DOT       &kp MINUS      &lt 2 N0     &trans     &trans      &trans
             >;
         };
@@ -88,7 +100,7 @@
             bindings = <
   &kp C_PREV          &kp C_PP        &kp C_NEXT       &kp C_MUTE        &none            &none   &kp F7         &kp F8        &kp F9       &kp F10
   &none               &none           &none            &none             &kp LC(SPACE)    &none   &kp F4         &kp F5        &kp F6       &kp F11
-  &mt LGUI LC(LS(Z))  &mt LALT LC(V)  &mt LCTRL LS(C)  &mt LSHIFT LC(X)  &kp LC(Z)        &none   &mt RSHIFT F1  &mt RCTRL F2  &mt RALT F3  &mt RGUI F12
+  &bhm LGUI LC(LS(Z))  &bhm LALT LC(V)  &bhm LCTRL LS(C)  &bhm LSHIFT LC(X)  &kp LC(Z)        &none   &bhm RSHIFT F1  &bhm RCTRL F2  &bhm RALT F3  &bhm RGUI F12
                                       &trans           &none             &trans           &trans  &trans         &trans
             >;
         };
