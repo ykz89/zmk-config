@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: round-robin
       url-base: https://github.com/ykz89
+    - name: jawick
+      url-base: https://github.com/JW2586/zmk.git
   projects:
 #    - name: zmk
 #      remote: round-robin

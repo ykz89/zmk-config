@@ -30,7 +30,7 @@
     &kp Q       &kp W       &kp F       &kp P       &kp B           &kp J   &kp L       &kp U       &kp Y       &kp SQT
     &mt LGUI A  &mt LALT R  &mt LCTRL S &mt LSHFT T &kp G           &kp M   &mt LSHFT N &mt LCTRL E &mt LALT I  &mt LGUI O
     &kp Z       &kp X       &kp C       &kp D       &kp V           &kp K   &kp H       &kp COMMA   &kp DOT     &kp FSLH
-    &kp N1      &kp ESC     &kp SPACE   &lt 2 TAB   &kp N2          &kp N3  &kp RET     &lt 1 DEL   &lt 3 TAB   &kp N4
+    &kp N1      &kp ESC     &kp SPACE   &lt 2 TAB   &kp N2          &kp N3  &kp RET     &lt 1 BSPC   &lt 3 DEL   &kp N4
             >;
 
             sensor-bindings = <
@@ -59,7 +59,7 @@
     &kp FSLH    &kp N7  &kp N8      &kp N9      &kp MINUS                   &trans      &kp PG_UP   &kp UP      &kp PG_DN   &trans
     &kp EQUAL   &kp N4  &kp N5      &kp N6      &kp PLUS                    &kp HOME    &kp LEFT    &kp DOWN    &kp RIGHT   &kp END
     &kp N0      &kp N1  &kp N2      &kp N3      &kp ASTERISK                &trans      &trans      &kp INS     &trans      &trans
-    &kp N3      &kp ESC &kp SPACE   &lt 2 TAB   &kp N4                      &kp N1      &kp RET     &lt 1 DEL   &lt 3 TAB   &kp N2
+    &kp N3      &kp ESC &kp SPACE   &lt 2 TAB   &kp N4                      &kp N1      &kp RET     &lt 1 BSPC   &lt 3 DEL   &kp N2
             >;
 
             sensor-bindings = <
@@ -89,7 +89,7 @@
     &kp LBRC      &kp AMPS    &kp ASTERISK  &kp LPAR    &kp RBKT        &trans           &trans          &trans              &trans            &trans
     &kp COLON     &kp DLLR    &kp PRCNT     &kp CARET   &kp PLUS        &kp UNDER        &kp APOS        &kp DOUBLE_QUOTES   &kp NON_US_BSLH   &kp GRAVE
     &kp TILDE     &kp EXCL    &kp AT        &kp POUND   &kp PIPE        &trans           &trans          &trans              &trans            &trans
-    &kp N1        &kp ESC     &kp SPACE     &lt 2 TAB   &kp N2          &kp N3           &kp RET         &lt 1 DEL           &lt 3 TAB         &kp N4
+    &kp N1        &kp ESC     &kp SPACE     &lt 2 TAB   &kp N2          &kp N3           &kp RET     &lt 1 BSPC   &lt 3 DEL         &kp N4
             >;
 
             sensor-bindings = <
@@ -118,7 +118,7 @@
     &trans          &trans          &bt BT_CLR      &trans          &sys_reset          &sys_reset  &kp F7  &kp F8      &kp F9      &kp F11
     &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4        &trans      &kp F4  &kp F5      &kp F6      &kp F12
     &trans          &trans          &trans          &trans          &trans              &kp F10     &kp F1  &kp F2      &kp F3      &kp F13
-    &kp N1          &kp ESC         &kp SPACE       &lt 2 TAB       &kp N2              &kp N3      &kp RET &lt 1 DEL   &lt 3 TAB   &kp N4
+    &kp N1          &kp ESC         &kp SPACE       &lt 2 TAB       &kp N2              &kp N3      &kp RET     &lt 1 BSPC   &lt 3 DEL   &kp N4
             >;
 
             sensor-bindings = <
