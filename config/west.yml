@@ -5,9 +5,13 @@ manifest:
     - name: round-robin
       url-base: https://github.com/ykz89
   projects:
+#    - name: zmk
+#      remote: round-robin
+#      revision: kscan/round_robin
+#      import: app/west.yml
     - name: zmk
-      remote: round-robin
-      revision: kscan/round_robin
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
