@@ -37,3 +37,8 @@ include:
     shield: totem_left
   - board: seeeduino_xiao_ble
     shield: totem_right
+
+  - board: nice_nano_v2
+    shield: klor_left
+  - board: nice_nano_v2
+    shield: klor_right
