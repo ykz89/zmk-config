@@ -2,18 +2,29 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: round-robin
+    - name: ykz89
       url-base: https://github.com/ykz89
     - name: jawick
       url-base: https://github.com/JW2586/zmk.git
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
 #    - name: zmk
-#      remote: round-robin
+#      remote: ykz89
 #      revision: kscan/round_robin
 #      import: app/west.yml
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
+    - name: zmk-split-peripheral-input-relay
+      remote: badjeff
+      revision: main
+    - name: zmk-input-behavior-listener
+      remote: badjeff
+      revision: main
   self:
     path: config
