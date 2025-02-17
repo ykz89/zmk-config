@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2025, ykz89
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <rpi_pico/rp2040.dtsi>
+#include "bykeeb-pinctl.dtsi"
+
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm_ch1a_default>;
+    pinctrl-names = "default";
+    divider-frac-1 = <15>;  // divider-frac-1 instead of divider-frac-0
+    divider-int-1 = <255>;  // divider-int-1 instead of divider-int-0
+};
+

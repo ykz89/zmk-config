@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: jawick
       url-base: https://github.com/JW2586/zmk.git
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
     - name: sadekbaroudi
       url-base: https://github.com/sadekbaroudi
     - name: ykz89
@@ -28,5 +30,8 @@ manifest:
       remote: sadekbaroudi
       revision: main
       import: config/deps.yml
+    - name: chiptuner-zmk-module
+      remote: petejohanson
+      revision: main
   self:
     path: config
