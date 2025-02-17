@@ -24,3 +24,9 @@
     divider-int-1 = <255>;  // divider-int-1 instead of divider-int-0
 };
 
+&usbd {
+    status = "okay";
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
