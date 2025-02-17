@@ -44,3 +44,8 @@ include:
     shield: klor_left
   - board: nice_nano_v2
     shield: klor_right
+
+  - board: seeeduino_xiao_ble
+    shield: bykeeb_left
+  - board: seeeduino_xiao_ble
+    shield: bykeeb_right

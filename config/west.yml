@@ -1,18 +1,16 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: ykz89
-      url-base: https://github.com/ykz89
-    - name: jawick
-      url-base: https://github.com/JW2586/zmk.git
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: jawick
+      url-base: https://github.com/JW2586/zmk.git
+    - name: sadekbaroudi
+      url-base: https://github.com/sadekbaroudi
+    - name: ykz89
+      url-base: https://github.com/ykz89
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware  
   projects:
-#    - name: zmk
-#      remote: ykz89
-#      revision: kscan/round_robin
-#      import: app/west.yml
     - name: zmk
       remote: zmkfirmware
       revision: main
@@ -26,5 +24,9 @@ manifest:
     - name: zmk-input-behavior-listener
       remote: badjeff
       revision: main
+    - name: zmk-fingerpunch-keyboards
+      remote: sadekbaroudi
+      revision: main
+      import: config/deps.yml
   self:
     path: config
