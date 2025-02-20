@@ -1,0 +1,46 @@
+#include <behaviors/num_word.dtsi> // requires auto-layer module
+
+// tap: backspace | double-tap: num-word | hold: num-layer
+#define BACKSPACE_NUM &backspace_num NUM DEF
+ZMK_HOLD_TAP(backspace_num,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&bspc_num_dance>;
+)
+ZMK_TAP_DANCE(bspc_num_dance,
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    bindings = <&kp BACKSPACE>, <&num_word NUM>;
+)
+
+// tap: space | double-tap: smart nav-layer | hold: nav-layer
+#define SPACE_NAV &space_nav NAV DEF
+ZMK_HOLD_TAP(space_nav,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&space_nav_dance>;
+)
+ZMK_TAP_DANCE(space_nav_dance,
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    bindings = <&kp SPACE>, <&nav_word NAV>;
+)
+
+// tap: escape | mod + tap: ` | hold: sys-layer
+#define SYSCAPE &sys_esc SYS DEF
+ZMK_HOLD_TAP(sys_esc,
+    flavor = "balanced";
+    tapping-term-ms = <TAPPING_TERM_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&gresc>;
+)
+
+// tap: delete | hold: mouse-layer
+#define DELMOUSE &lt MOUSE DELETE
+
+// // smart-mouse, requires PR #1366
+// ZMK_TRI_STATE(smart_mouse,
+//     bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+//     ignored-key-positions = <LT1 LT3 RT0 RT1 RT2 RT3 RT4 RM1 RM2 RM3 RB1 RB2 RB3 RH0 RH1>;
+//     ignored-layers = <MOUSE>;
+// )

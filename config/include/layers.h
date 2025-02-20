@@ -1,0 +1,9 @@
+#define DEF 0
+#define APTMAK 1
+#define NAV 2
+#define NUM 3
+#define SYM 4
+#define MEDIA 5
+#define MOUSE 6
+#define FN 7
+#define SYS 8

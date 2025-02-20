@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: sadekbaroudi
       url-base: https://github.com/sadekbaroudi
+    - name: urob
+      url-base: https://github.com/urob
     - name: ykz89
       url-base: https://github.com/ykz89
     - name: zmkfirmware
@@ -32,6 +34,15 @@ manifest:
       import: config/deps.yml
     - name: chiptuner-zmk-module
       remote: petejohanson
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-tri-state
+      remote: urob
       revision: main
   self:
     path: config
